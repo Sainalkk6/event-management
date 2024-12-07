@@ -11,7 +11,15 @@ export default {
       colors: {
         background: "var(--background)",
         foreground: "var(--foreground)",
+        primaryText:"#f84464"
       },
+      fontFamily: {
+        sans: ['"DM Sans"', 'sans-serif'],
+        poppins: ['var(--font-poppins)'],
+      },
+      lineHeight:{
+        loose: '19.2px',
+      }
     },
   },
   plugins: [],
