@@ -1,4 +1,5 @@
 "use client";
+import NoEvents from "@/app/admin/bookago/_components/NoEvents";
 import EventCard from "@/components/EventCard";
 import Loader from "@/components/Loader";
 import Navbar from "@/components/Navbar";
@@ -21,7 +22,6 @@ const page = () => {
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => setSearch(e.target.value);
 
-  if (data && data.length === 0) return <div>You dont have any booked events Try booking something...</div>;
   if (isLoading) return <Loader />;
 
   return (
@@ -32,11 +32,15 @@ const page = () => {
           <input className="w-full outline-none border-none text-lg h-full bg-white rounded-xl" type="text" placeholder="Search here..." onChange={handleChange} value={search} />
         </div>
       </Navbar>
-      <div className="grid 2xl:grid-cols-4 xl:grid-cols-3 gap-6 px-5 py-5 grid-cols-1 lg:grid-cols-2">
-        {data &&
-          data.length > 0 &&
-          data.map((event: EventCardPropType[], index: number) => <EventCard key={index} date={event[0].date} description={event[0].description} id={event[0].id} imageUrl={event[0].imageUrl} location={event[0].location} price={event[0].price} route={`/bookago/my-bookings/${event[0].id}`} time={event[0].time} title={event[0].title} />)}
-      </div>
+      {data && data.length === 0 ? (
+        <NoEvents link={false} label="Nothing to see here..." />
+      ) : (
+        <div className="grid 2xl:grid-cols-4 xl:grid-cols-3 gap-6 px-5 py-5 grid-cols-1 lg:grid-cols-2">
+          {data &&
+            data.length > 0 &&
+            data.map((event: EventCardPropType[], index: number) => <EventCard key={index} date={event[0].date} description={event[0].description} id={event[0].id} imageUrl={event[0].imageUrl} location={event[0].location} price={event[0].price} route={`/bookago/my-bookings/${event[0].id}`} time={event[0].time} title={event[0].title} />)}
+        </div>
+      )}
     </div>
   );
 };

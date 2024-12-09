@@ -45,7 +45,7 @@ const SeatCountContainer = ({ count, setCount, id, setShowModal,ref }: SeatCount
   };
 
   return (
-    <div className="-mt-3 flex w-[560px] text-black font-poppins py-8 px-10 flex-col items-center justify-center gap-6 rounded-2xl relative bg-white z-20 " ref={ref}>
+    <div className="-mt-3 flex mx-10 sm:mx-0 w-full sm:w-[560px] text-black font-poppins py-8 px-10 flex-col items-center justify-center gap-6 rounded-2xl relative bg-white z-20 " ref={ref}>
       <button className="absolute hover:scale-75 transition-transform duration-200 right-5 top-5" onClick={() => setShowModal(false)}>
         <MdCloseFullscreen  size={30} />
       </button>
@@ -64,7 +64,7 @@ const SeatCountContainer = ({ count, setCount, id, setShowModal,ref }: SeatCount
           <>
             <h2 className="font-medium leading-loose text-xl">How Many Seats?</h2>
             <img src={image} className="h-[81px]" alt="vehicle" />
-            <div className="flex justify-center items-center gap-3">
+            <div className="flex sm:flex-row flex-col justify-center items-center gap-3">
               {seats.map((seat) => (
                 <button onClick={() => handleSeatChange(seat)} className={`flex items-center justify-center h-[30px] w-[30px] p-1 rounded-full ${count === seat ? "bg-primaryText text-white" : "bg-white text-black"}`} key={seat}>
                   {seat}

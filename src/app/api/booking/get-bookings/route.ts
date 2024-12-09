@@ -11,7 +11,7 @@ export const GET = async (req: NextRequest) => {
     try {
         const eventIds = await prisma.bookings.findMany({ where: { userId: userEmail ?? "" } })
         const events = await Promise.all(
-            eventIds.map(async (event) => await prisma.event.findMany({ where: { id: event.id } }))
+            eventIds.map(async (event) => await prisma.event.findMany({ where: { id: event.eventId } }))
         )
         return NextResponse.json(events)
     } catch (err) {

@@ -6,8 +6,11 @@ export function middleware(request: NextRequest) {
     const path = request.nextUrl.pathname;
     const isAuthenticatedAdmin = request.cookies.get("adminCode") !== undefined;
     const isAuthenticated = request.cookies.get("authenticatedUser") !== undefined;
+    const isSuperAdmin = request.cookies.get("superAdmin") !== undefined;
 
-    if (!isAuthenticatedAdmin && path.startsWith("/admin") && path !== "/admin/auth" && path !== "/admin/auth/login") {
+    if(!isSuperAdmin && path === "/admin/auth/signup") return NextResponse.redirect(new URL("/admin/bookago/dashboard",request.url))
+
+    if (!isAuthenticatedAdmin && path.startsWith("/admin") && path !== "/admin/auth/login") {
         return NextResponse.redirect(new URL("/admin/auth/login", request.url));
     }
 

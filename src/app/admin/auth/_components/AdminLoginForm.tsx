@@ -23,6 +23,9 @@ const AdminLoginForm = () => {
         if (!res?.ok) {
           setError("Invalid Credentials");
         } else {
+          if(values.email === process.env.NEXT_PUBLIC_SUPER_ADMIN){
+            document.cookie = `superAdmin=${process.env.NEXT_PUBLIC_SUPER_ADMIN_SESSION_CODE}; max-age=3600;`
+          }
           document.cookie = `adminCode=${process.env.NEXT_PUBLIC_ADMIN_SESSION_CODE}; path=/admin`
           router.push("/admin/bookago/dashboard");
         }

@@ -1,7 +1,12 @@
 {
-  "/page": "app/page.js",
+  "/api/events/get-event/[eventId]/route": "app/api/events/get-event/[eventId]/route.js",
+  "/api/auth/[...nextauth]/route": "app/api/auth/[...nextauth]/route.js",
+  "/api/events/get-events/route": "app/api/events/get-events/route.js",
+  "/api/users/admin/getAdmin/route": "app/api/users/admin/getAdmin/route.js",
+  "/bookago/login/page": "app/bookago/login/page.js",
+  "/bookago/signup/page": "app/bookago/signup/page.js",
   "/admin/auth/login/page": "app/admin/auth/login/page.js",
   "/admin/bookago/dashboard/page": "app/admin/bookago/dashboard/page.js",
-  "/admin/bookago/dashboard/create-event/page": "app/admin/bookago/dashboard/create-event/page.js",
-  "/admin/bookago/dashboard/[eventId]/page": "app/admin/bookago/dashboard/[eventId]/page.js"
+  "/admin/bookago/dashboard/[eventId]/page": "app/admin/bookago/dashboard/[eventId]/page.js",
+  "/admin/bookago/settings/page": "app/admin/bookago/settings/page.js"
 }
