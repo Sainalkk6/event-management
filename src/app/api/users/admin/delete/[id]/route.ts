@@ -1,9 +1,11 @@
-import { NextResponse } from "next/server"
+import { NextRequest, NextResponse } from "next/server"
 import { prisma } from "../../../../../../../lib/prisma";
 
-export const DELETE = async (_: Request, { params }: { params: { id: string } }) => {
+
+
+export const DELETE = async (req:NextRequest,{params}:any) => {
     try {
-        const id = await params.id;
+        const id = params.id
         await prisma.user.delete({ where: { id:Number(id), isAdmin: true } })
         return NextResponse.json({ message: "Successfullu deleted an admin user" })
     } catch (err) {

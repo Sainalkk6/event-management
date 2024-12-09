@@ -61,3 +61,7 @@ export type ModalButtonPropType = {
     label: string;
     onClick: MouseEventHandler<HTMLButtonElement>
 }
+
+export type Params = {
+    params: { [key: string]: string }
+}

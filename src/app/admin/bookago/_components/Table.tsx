@@ -34,8 +34,7 @@ const Container = () => {
   const { mutate } = useMutation({
     mutationFn: async (id: number) =>
       await fetch(`/api/users/admin/delete/${id}`, {
-        method: "DELETE",
-        headers: { "Content-Type": "application/json" },
+        method: "DELETE"
       }),
     onSuccess: () => queryClient.invalidateQueries({ queryKey: [dataQueryKeys.user] }),
   });

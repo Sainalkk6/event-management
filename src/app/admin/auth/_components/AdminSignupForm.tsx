@@ -25,7 +25,7 @@ const AdminSignupForm = () => {
       if (response.status === 409) {
         setError(response.message);
       } else {
-        router.push("/admin/auth/login");
+        router.push("/admin/bookago/dashboard");
       }
     },
     validationSchema: signupSchema,

@@ -7,13 +7,11 @@ import SeatCountContainer from "./SeatCountContainer";
 import Link from "next/link";
 import { useSession } from "next-auth/react";
 import LoginMessageContainer from "./LoginMessageContainer";
-import { usePathname } from "next/navigation";
 import { useRouter } from "next/navigation";
 import { useQuery } from "@tanstack/react-query";
 import { dataQueryKeys } from "@/utils/querykey";
 
 const EventDetails = ({ ...props }: EventCardPropType) => {
-  const pathname = usePathname();
   const router = useRouter();
   const [count, setCount] = useState(1);
   const [showModal, setShowModal] = useState(true);
@@ -44,7 +42,10 @@ const EventDetails = ({ ...props }: EventCardPropType) => {
     }
   };
 
-  document.addEventListener("mousedown", closeMenu);
+
+  if ((document && typeof window !== undefined) || typeof document !== undefined) {
+    document.addEventListener("mousedown", closeMenu);
+  }
 
   return (
     <div className="flex w-full bg-[#fff] font-poppins flex-col items-center justify-center overflow-hidden">

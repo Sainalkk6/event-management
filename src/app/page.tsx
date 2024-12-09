@@ -1,7 +1,7 @@
 "use client";
 import EventContainer from "@/components/EventContainer";
 import Navbar from "@/components/Navbar";
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 import { GoSearch } from "react-icons/go";
 
 const page = () => {

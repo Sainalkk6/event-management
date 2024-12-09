@@ -1,6 +1,8 @@
 import EventForm from "../create-event/_components/EventForm";
 
-const page = async ({ params }: { params: { eventId: string } }) => {
+type tParams = Promise<{ eventId: string }>;
+
+const page = async ({ params }: { params: tParams }) => {
   const { eventId } = await params;
   const data = await fetch(`http://localhost:3000/api/events/get-event/${eventId}`);
   const res = await data.json();
