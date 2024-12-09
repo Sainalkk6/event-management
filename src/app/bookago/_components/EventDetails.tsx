@@ -43,10 +43,9 @@ const EventDetails = ({ ...props }: EventCardPropType) => {
   };
 
 
-  if ((document && typeof window !== undefined) || typeof document !== undefined) {
+  if (typeof document !== "undefined") {
     document.addEventListener("mousedown", closeMenu);
   }
-
   return (
     <div className="flex w-full bg-[#fff] font-poppins flex-col items-center justify-center overflow-hidden">
       {showModal && <div className="flex min-h-[100vh]  top-0 w-full items-center justify-center overflow-hidden bg-black bg-opacity-80 absolute">{data?.user?.name === "" || data?.user === undefined ? <LoginMessageContainer ref={ref} setShowModal={setShowModal} /> : <SeatCountContainer ref={ref} setShowModal={setShowModal} id={props.id} count={count} setCount={setCount} />}</div>}

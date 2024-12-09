@@ -19,14 +19,11 @@ const Navbar = ({ children }: { children?: ReactNode }) => {
       setShowModal(false);
     }
   };
-
-  if ((document && typeof window !== undefined) || typeof document !== undefined) {
+  if (typeof document !== "undefined") {
     document.addEventListener("mousedown", closeMenu);
   }
-
   return (
     <div className="flex w-full justify-end sm:justify-between font-poppins items-center px-5 py-5 sticky top-0 bg-white">
-      {/* Todo */}
       <Link href={"/"} className="text-[#a00040] text-2xl font-light hidden sm:flex">
         Booka<span className=" font-semibold">Go</span>
       </Link>

@@ -14,6 +14,9 @@ export const metadata = {
 import AuthProvider from "@/providers/SessionProvider";
 import "./globals.css";
 import QueryProvider from "@/providers/QueryProvider";
+import { Suspense } from "react";
+import Loader from "@/components/Loader";
+import Loading from "./loading";
 
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
@@ -22,6 +25,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
       <body className="font-poppins">
         <AuthProvider>
           <QueryProvider>
+            <Suspense fallback={<Loading/>} />
             <main className={` ${poppins.variable}`}>{children}</main>
           </QueryProvider>
         </AuthProvider>

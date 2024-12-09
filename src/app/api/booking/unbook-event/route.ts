@@ -8,7 +8,6 @@ export const DELETE = async (req: NextRequest) => {
     const email = url.searchParams.get('email');
 
     try {
-        console.log(Number(id))
         await prisma.bookings.deleteMany({ where: { eventId:Number(id),userId:email ?? "" } })
         return NextResponse.json({ message: "The booking for the event has been deleted successfully" })
     } catch (err) {
