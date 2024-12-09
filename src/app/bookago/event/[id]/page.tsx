@@ -1,5 +1,4 @@
 "use client";
-import { use } from "react";
 import Navbar from "@/components/Navbar";
 import React from "react";
 import { useQuery } from "@tanstack/react-query";
@@ -7,8 +6,8 @@ import { dataQueryKeys } from "@/utils/querykey";
 import EventDetails from "../../_components/EventDetails";
 import Loader from "@/components/Loader";
 
-const EventPage = ({ params }: { params: Promise<{ id: string }> }) => {
-  const { id } = use(params);
+const EventPage = ({ params }: any) => {
+  const { id } = params;
   const { data, isLoading } = useQuery({
     queryKey: [dataQueryKeys.events, id],
     queryFn: async () => {
