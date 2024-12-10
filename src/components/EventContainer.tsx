@@ -10,7 +10,7 @@ const EventContainer = ({ searchTerm, route }: { searchTerm: string; route: stri
   const { data, isLoading } = useQuery({
     queryKey: [dataQueryKeys.events],
     queryFn: async () => {
-      const httpResponse = await fetch("http://localhost:3000/api/events/get-events");
+      const httpResponse = await fetch("/api/events/get-events");
       const data = await httpResponse.json();
       return data;
     },
