@@ -1,9 +1,3 @@
 {
-  "pages": {
-    "/api/events/get-events/route": [
-      "static/chunks/webpack.js",
-      "static/chunks/main-app.js",
-      "static/chunks/app/api/events/get-events/route.js"
-    ]
-  }
+  "pages": {}
 }
