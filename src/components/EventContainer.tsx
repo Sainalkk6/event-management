@@ -30,7 +30,7 @@ const EventContainer = ({ searchTerm, route }: { searchTerm: string; route: stri
         <NoEvents link label="There are no events scheduled at the moment." />
       ) : (
         <div className="grid 2xl:grid-cols-4 xl:grid-cols-3 gap-6 px-5 py-5 grid-cols-1 lg:grid-cols-2">
-          {events.map((event: EventCardPropType, index: number) => (
+          {Array.isArray(events) && events.map((event: EventCardPropType, index: number) => (
             <EventCard price={event.price} id={event.id} route={`${route}/${event.id}`} date={event.date} description={event.description} imageUrl={event.imageUrl} location={event.location} time={event.time} title={event.title} key={index} />
           ))}
         </div>
