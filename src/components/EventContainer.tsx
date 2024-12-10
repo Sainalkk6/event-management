@@ -18,7 +18,7 @@ const EventContainer = ({ searchTerm, route }: { searchTerm: string; route: stri
 
   if (isLoading) return <Loader />;
 
-  const filteredData = data && data.filter((event: EventCardPropType) => event.title.toLowerCase().includes(searchTerm.toLowerCase().trim()) || event.location.toLowerCase().includes(searchTerm.toLowerCase().trim()) || event.date.includes(searchTerm.toLowerCase().trim()) || event.time.includes(searchTerm.toLowerCase().trim()));
+  const filteredData = Array.isArray(data) && data.filter((event: EventCardPropType) => event.title.toLowerCase().includes(searchTerm.toLowerCase().trim()) || event.location.toLowerCase().includes(searchTerm.toLowerCase().trim()) || event.date.includes(searchTerm.toLowerCase().trim()) || event.time.includes(searchTerm.toLowerCase().trim()));
 
   const events = searchTerm !== "" ? filteredData : data;
 
