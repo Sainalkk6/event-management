@@ -4,7 +4,7 @@ type tParams = Promise<{ eventId: string }>;
 
 const page = async ({ params }: { params: tParams }) => {
   const { eventId } = await params;
-  const data = await fetch(`http://localhost:3000/api/events/get-event/${eventId}`);
+  const data = await fetch(`${process.env.NEXT_PUBLIC_LOCAL_URL}/api/events/get-event/${eventId}`);
   const res = await data.json();
 
   return (

@@ -15,7 +15,7 @@ const SIgnUpForm = () => {
   const { handleBlur, handleSubmit, errors, values, handleChange, touched } = useFormik({
     initialValues: { email: "", password: "", name: "" },
     onSubmit: async (values) => {
-      const res = await fetch("http://localhost:3000/api/users/user/signup", {
+      const res = await fetch(`${process.env.NEXT_PUBLIC_LOCAL_URL}/api/users/user/signup`, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ email: values.email, password: values.password, name: values.name }),
