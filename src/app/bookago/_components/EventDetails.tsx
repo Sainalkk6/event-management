@@ -14,7 +14,7 @@ import { dataQueryKeys } from "@/utils/querykey";
 const EventDetails = ({ ...props }: EventCardPropType) => {
   const router = useRouter();
   const [count, setCount] = useState(1);
-  const [showModal, setShowModal] = useState(true);
+  const [showModal, setShowModal] = useState(false);
   const formattedDate = dayjs(props.date).format("dddd, MMMM D, YYYY h:mm A");
   const { data } = useSession();
   const price = props.price === 0 ? "Free" : `$${props.price}`;
