@@ -1,1 +1,5 @@
-{}
+{
+  "/page": "app/page.js",
+  "/bookago/event/[id]/page": "app/bookago/event/[id]/page.js",
+  "/bookago/login/page": "app/bookago/login/page.js"
+}
