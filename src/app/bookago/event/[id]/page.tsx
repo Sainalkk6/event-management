@@ -11,7 +11,7 @@ const EventPage = ({ params }: any) => {
   const { data, isLoading } = useQuery({
     queryKey: [dataQueryKeys.events, id],
     queryFn: async () => {
-      const response = await fetch(`${process.env.NEXT_PUBLIC_LOCAL_URL}/api/events/get-event/${id}`);
+      const response = await fetch(`/api/events/get-event/${id}`);
       const data = response.json();
       return data;
     },

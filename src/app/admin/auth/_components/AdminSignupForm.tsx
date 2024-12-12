@@ -15,7 +15,7 @@ const AdminSignupForm = () => {
   const { values, handleBlur, errors, touched, handleChange, handleSubmit } = useFormik({
     initialValues: { email: "", password: "", confirmPass: "" },
     onSubmit: async (values) => {
-      const res = await fetch(`${process.env.NEXT_PUBLIC_LOCAL_URL}/api/users/admin/signup`, {
+      const res = await fetch(`/api/users/admin/signup`, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ email: values.email, password: values.password }),
