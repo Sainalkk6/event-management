@@ -1,6 +1,6 @@
 {
   "/api/auth/[...nextauth]/route": "app/api/auth/[...nextauth]/route.js",
-  "/favicon.ico/route": "app/favicon.ico/route.js",
+  "/api/events/get-events/route": "app/api/events/get-events/route.js",
   "/api/booking/get-bookings/route": "app/api/booking/get-bookings/route.js",
   "/page": "app/page.js",
   "/bookago/my-bookings/page": "app/bookago/my-bookings/page.js"

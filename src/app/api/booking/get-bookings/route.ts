@@ -6,13 +6,11 @@ import { getServerSession } from "next-auth";
 export const GET = async (req: NextRequest) => {
     const session = await getServerSession()
     const userEmail = session?.user?.email
+    console.log(userEmail)
 
     try {
         if (userEmail) {
             const events = await prisma.bookings.findMany({ where: { userId: userEmail ?? "" },include:{event:true} })
-            // const events = await Promise.all(
-            //     eventIds.map(async (event) => await prisma.event.findMany({ where: { id: event.eventId } }))
-            // )
             return NextResponse.json(events)
         } else {
             return NextResponse.json({ message: "Something went wrong while fetching the events for the current user" })
