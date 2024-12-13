@@ -1,10 +1,7 @@
 {
-  "/favicon.ico/route": "app/favicon.ico/route.js",
   "/api/auth/[...nextauth]/route": "app/api/auth/[...nextauth]/route.js",
+  "/favicon.ico/route": "app/favicon.ico/route.js",
   "/api/booking/get-bookings/route": "app/api/booking/get-bookings/route.js",
-  "/api/booking/booked/route": "app/api/booking/booked/route.js",
-  "/api/events/get-event/[eventId]/route": "app/api/events/get-event/[eventId]/route.js",
   "/page": "app/page.js",
-  "/bookago/my-bookings/page": "app/bookago/my-bookings/page.js",
-  "/bookago/my-bookings/[eventId]/page": "app/bookago/my-bookings/[eventId]/page.js"
+  "/bookago/my-bookings/page": "app/bookago/my-bookings/page.js"
 }

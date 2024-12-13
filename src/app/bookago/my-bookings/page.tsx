@@ -20,6 +20,8 @@ const page = () => {
     },
   });
 
+   data &&  console.log(99999,data)
+
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => setSearch(e.target.value);
 
   if (isLoading) return <Loader />;
@@ -36,7 +38,7 @@ const page = () => {
         <NoEvents link={false} label="Nothing to see here..." />
       ) : (
         <div className="grid 2xl:grid-cols-4 xl:grid-cols-3 gap-6 px-5 py-5 grid-cols-1 lg:grid-cols-2">
-          {data && data.map((event: EventCardInterface, index: number) => <EventCard key={index} date={event.event.date} description={event.event.description} id={event.event.id} imageUrl={event.event.imageUrl} location={event.event.location} price={event.event.price} route={`/bookago/my-bookings/${event.event.id}`} time={event.event.time} title={event.event.title} />)}
+          {data && data.length > 0  && data.map((event: EventCardInterface, index: number) => <EventCard key={index} date={event.event.date} description={event.event.description} id={event.event.id} imageUrl={event.event.imageUrl} location={event.event.location} price={event.event.price} route={`/bookago/my-bookings/${event.event.id}`} time={event.event.time} title={event.event.title} />)}
         </div>
       )}
     </div>

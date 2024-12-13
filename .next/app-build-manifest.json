@@ -35,21 +35,6 @@
       "static/chunks/webpack.js",
       "static/chunks/main-app.js",
       "static/chunks/app/api/booking/get-bookings/route.js"
-    ],
-    "/bookago/my-bookings/[eventId]/page": [
-      "static/chunks/webpack.js",
-      "static/chunks/main-app.js",
-      "static/chunks/app/bookago/my-bookings/[eventId]/page.js"
-    ],
-    "/api/events/get-event/[eventId]/route": [
-      "static/chunks/webpack.js",
-      "static/chunks/main-app.js",
-      "static/chunks/app/api/events/get-event/[eventId]/route.js"
-    ],
-    "/api/booking/booked/route": [
-      "static/chunks/webpack.js",
-      "static/chunks/main-app.js",
-      "static/chunks/app/api/booking/booked/route.js"
     ]
   }
 }
