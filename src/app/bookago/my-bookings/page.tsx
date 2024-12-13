@@ -3,7 +3,7 @@ import NoEvents from "@/app/admin/bookago/_components/NoEvents";
 import EventCard from "@/components/EventCard";
 import Loader from "@/components/Loader";
 import Navbar from "@/components/Navbar";
-import { EventCardPropType } from "@/types/types";
+import { EventCardInterface } from "@/types/types";
 import { dataQueryKeys } from "@/utils/querykey";
 import { useQuery } from "@tanstack/react-query";
 import React, { useState } from "react";
@@ -36,9 +36,7 @@ const page = () => {
         <NoEvents link={false} label="Nothing to see here..." />
       ) : (
         <div className="grid 2xl:grid-cols-4 xl:grid-cols-3 gap-6 px-5 py-5 grid-cols-1 lg:grid-cols-2">
-          {data &&
-            data.length > 0 &&
-            data.map((event: EventCardPropType[], index: number) => <EventCard key={index} date={event[0].date} description={event[0].description} id={event[0].id} imageUrl={event[0].imageUrl} location={event[0].location} price={event[0].price} route={`/bookago/my-bookings/${event[0].id}`} time={event[0].time} title={event[0].title} />)}
+          {data && data.map((event: EventCardInterface, index: number) => <EventCard key={index} date={event.event.date} description={event.event.description} id={event.event.id} imageUrl={event.event.imageUrl} location={event.event.location} price={event.event.price} route={`/bookago/my-bookings/${event.event.id}`} time={event.event.time} title={event.event.title} />)}
         </div>
       )}
     </div>

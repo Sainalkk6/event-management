@@ -44,6 +44,10 @@ export type EventCardPropType = {
     price: number
 }
 
+export interface EventCardInterface {
+    event:EventCardPropType
+}
+
 
 export interface EventFormPropType {
     id?: number;
