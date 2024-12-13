@@ -25,16 +25,6 @@
       "static/chunks/webpack.js",
       "static/chunks/main-app.js",
       "static/chunks/app/api/events/get-events/route.js"
-    ],
-    "/bookago/my-bookings/page": [
-      "static/chunks/webpack.js",
-      "static/chunks/main-app.js",
-      "static/chunks/app/bookago/my-bookings/page.js"
-    ],
-    "/api/booking/get-bookings/route": [
-      "static/chunks/webpack.js",
-      "static/chunks/main-app.js",
-      "static/chunks/app/api/booking/get-bookings/route.js"
     ]
   }
 }
