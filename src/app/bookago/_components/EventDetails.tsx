@@ -15,7 +15,6 @@ const EventDetails = ({ ...props }: EventCardPropType) => {
   const router = useRouter();
   const [count, setCount] = useState(1);
   const [showModal, setShowModal] = useState(false);
-  console.log(props.time)
   const formattedDate = dayjs(props.date).format("dddd, MMMM D, YYYY");
   const { data } = useSession();
   const price = props.price === 0 ? "Free" : `$${props.price}`;

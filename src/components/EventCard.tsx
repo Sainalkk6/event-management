@@ -17,7 +17,6 @@ const EventCard = ({ date, description, route, imageUrl, id, price, location, ti
   const day = date.slice(8, 10);
   const year = date.slice(0, 4);
   const rate = price === 0 ? "Free" : `$${price}`;
-  console.log(imageUrl)
 
   return (
     <div className="flex group flex-col w-full font-poppins rounded-3xl cursor-pointer min-w-[355px] bg-white border hover:shadow-sm transition-all duration-200 " onClick={() => router.push(route)}>
