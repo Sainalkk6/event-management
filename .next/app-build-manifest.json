@@ -16,15 +16,40 @@
       "static/chunks/main-app.js",
       "static/chunks/app/page.js"
     ],
+    "/admin/auth/login/page": [
+      "static/chunks/webpack.js",
+      "static/chunks/main-app.js",
+      "static/chunks/app/admin/auth/login/page.js"
+    ],
     "/api/auth/[...nextauth]/route": [
       "static/chunks/webpack.js",
       "static/chunks/main-app.js",
       "static/chunks/app/api/auth/[...nextauth]/route.js"
     ],
+    "/admin/bookago/layout": [
+      "static/chunks/webpack.js",
+      "static/chunks/main-app.js",
+      "static/chunks/app/admin/bookago/layout.js"
+    ],
+    "/admin/bookago/dashboard/page": [
+      "static/chunks/webpack.js",
+      "static/chunks/main-app.js",
+      "static/chunks/app/admin/bookago/dashboard/page.js"
+    ],
     "/api/events/get-events/route": [
       "static/chunks/webpack.js",
       "static/chunks/main-app.js",
       "static/chunks/app/api/events/get-events/route.js"
+    ],
+    "/admin/bookago/dashboard/[eventId]/page": [
+      "static/chunks/webpack.js",
+      "static/chunks/main-app.js",
+      "static/chunks/app/admin/bookago/dashboard/[eventId]/page.js"
+    ],
+    "/api/events/get-event/[eventId]/route": [
+      "static/chunks/webpack.js",
+      "static/chunks/main-app.js",
+      "static/chunks/app/api/events/get-event/[eventId]/route.js"
     ]
   }
 }

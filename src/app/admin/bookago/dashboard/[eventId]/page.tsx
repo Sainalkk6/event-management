@@ -6,6 +6,8 @@ const page = async ({ params }: { params: tParams }) => {
   const { eventId } = await params;
   const data = await fetch(`${process.env.NEXT_PUBLIC_URL}/api/events/get-event/${eventId}`);
   const res = await data.json();
+  console.log("<<<data>>>",data)
+  console.log("<<json data >>> ",res)
 
   return (
     <div className="flex pt-5 pl-14 w-full bg-[#f5f5f5] mr-5 sm:mr-0">

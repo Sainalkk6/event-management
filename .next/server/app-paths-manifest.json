@@ -1,6 +1,5 @@
 {
-  "/api/auth/[...nextauth]/route": "app/api/auth/[...nextauth]/route.js",
-  "/favicon.ico/route": "app/favicon.ico/route.js",
-  "/api/events/get-events/route": "app/api/events/get-events/route.js",
-  "/page": "app/page.js"
+  "/admin/auth/login/page": "app/admin/auth/login/page.js",
+  "/admin/bookago/dashboard/page": "app/admin/bookago/dashboard/page.js",
+  "/admin/bookago/dashboard/[eventId]/page": "app/admin/bookago/dashboard/[eventId]/page.js"
 }
