@@ -19,9 +19,7 @@ const page = () => {
       return data;
     },
   });
-
-   data &&  console.log(99999,data)
-
+  
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => setSearch(e.target.value);
 
   if (isLoading) return <Loader />;

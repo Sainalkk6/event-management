@@ -15,10 +15,14 @@ const EventDetails = ({ ...props }: EventCardPropType) => {
   const router = useRouter();
   const [count, setCount] = useState(1);
   const [showModal, setShowModal] = useState(false);
-  const formattedDate = dayjs(props.date).format("dddd, MMMM D, YYYY h:mm A");
+  console.log(props.time)
+  const formattedDate = dayjs(props.date).format("dddd, MMMM D, YYYY");
   const { data } = useSession();
   const price = props.price === 0 ? "Free" : `$${props.price}`;
   const ref = useRef<HTMLDivElement>(null)
+  const hour = props.time.slice(0,2)
+  const minutes = props.time.slice(3,5)
+  const formattedTime = Number(hour) > 12 ? `${Number(hour) % 12} : ${minutes} PM` : `${hour} : ${minutes} AM`
 
   const unbookEvent = async () => {
     await fetch(`/api/booking/unbook-event?email=${data?.user?.email}&id=${props.id}`, {
@@ -48,7 +52,7 @@ const EventDetails = ({ ...props }: EventCardPropType) => {
   }
   return (
     <div className="flex w-full bg-[#fff] font-poppins flex-col items-center justify-center overflow-hidden">
-      {showModal && <div className="flex min-h-[100vh]  top-0 w-full items-center justify-center overflow-hidden bg-black bg-opacity-80 absolute">{data?.user?.name === "" || data?.user === undefined ? <LoginMessageContainer ref={ref} setShowModal={setShowModal} /> : <SeatCountContainer ref={ref} setShowModal={setShowModal} id={props.id} count={count} setCount={setCount} />}</div>}
+      {showModal && <div className="flex min-h-[100vh]  top-0 w-full items-center justify-center overflow-hidden bg-black bg-opacity-80 absolute">{data?.user?.name === "" || data?.user === undefined ? <LoginMessageContainer ref={ref} setShowModal={setShowModal} /> : <SeatCountContainer price={props.price} ref={ref} setShowModal={setShowModal} id={props.id} count={count} setCount={setCount} />}</div>}
       <div className="flex max-w-[1140px] flex-col">
         <div className="sm:h-[588px] overflow-hidden">
           <img alt="Event Image" src={props.imageUrl} className="w-full max-w-[1030px] object-cover object-center" />
@@ -73,7 +77,7 @@ const EventDetails = ({ ...props }: EventCardPropType) => {
               <RiMapPinLine />
               <span>{props.location}</span>
             </div>
-            <div className="flex uppercase py-1 px-3 flex-1">{formattedDate}</div>
+            <div className="flex uppercase py-1 px-3 flex-1">{formattedDate} , {formattedTime}</div>
             <div className="inline-flex uppercase py-1 px-3 flex-1 text-green-600 text-lg">{price}</div>
             <Link className="flex max-h-[42px] items-center justify-center py-2 px-[60px] rounded bg-sky-400  text-white hover:scale-105 hover:bg-sky-600 transition-all duration-200" href={"/"}>
               Home

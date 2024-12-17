@@ -7,7 +7,6 @@ import { authOptions } from "@/utils/authOptions";
 export const GET = async (req: NextRequest) => {
     const session = await getServerSession(authOptions)
     const userEmail = session?.user?.email
-    console.log(userEmail)
 
     try {
         if (userEmail) {

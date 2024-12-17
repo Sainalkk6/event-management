@@ -9,10 +9,11 @@ interface SeatCountContainerProp {
   setCount: React.Dispatch<React.SetStateAction<number>>;
   id: number;
   setShowModal: React.Dispatch<React.SetStateAction<boolean>>;
-  ref:React.RefObject<HTMLDivElement>
+  ref:React.RefObject<HTMLDivElement>;
+  price:number
 }
 
-const SeatCountContainer = ({ count, setCount, id, setShowModal,ref }: SeatCountContainerProp) => {
+const SeatCountContainer = ({ count, price,setCount, id, setShowModal,ref }: SeatCountContainerProp) => {
   const images = ["/cycle.svg", "/scooter.svg", "/muscle.svg", "/car.svg", "/van.svg", "/bus.svg", "/tram.svg"];
   const [image, setImage] = useState(images[0]);
   const seats = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
@@ -64,6 +65,7 @@ const SeatCountContainer = ({ count, setCount, id, setShowModal,ref }: SeatCount
           <>
             <h2 className="font-medium leading-loose text-xl">How Many Seats?</h2>
             <img src={image} className="h-[81px]" alt="vehicle" />
+            <h1 className="font-medium leading-loose text-xl">${price * count}</h1>
             <div className="flex sm:flex-row flex-col justify-center items-center gap-3">
               {seats.map((seat) => (
                 <button onClick={() => handleSeatChange(seat)} className={`flex items-center justify-center h-[30px] w-[30px] p-1 rounded-full ${count === seat ? "bg-primaryText text-white" : "bg-white text-black"}`} key={seat}>
